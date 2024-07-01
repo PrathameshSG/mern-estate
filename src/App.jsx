@@ -6,11 +6,12 @@ import About from "./pages/About";
 
 import Listing from "./pages/Listing";
 import Search from "./pages/Search";
+import Header from "./components/Header";
 const App = () => {
   return (
     <div>
       <BrowserRouter>
-        {/* <Header /> */}
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sign-in" element={<SignIn />} />
