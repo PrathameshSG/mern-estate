@@ -1,11 +1,23 @@
 import express from "express";
-// import mongoose from "mongoose";
-// import dotenv from "dotenv";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
+
 // import userRouter from "./routes/user.route.js";
 // import authRouter from "./routes/auth.route.js";
 // import listingRouter from "./routes/listing.route.js";
 // import cookieParser from "cookie-parser";
 // import path from "path";
+
+// connecting to database
+mongoose
+  .connect(process.env.MONGO)
+  .then(() => {
+    console.log("Connected to MongoDB!");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 // inistlize express
 const app = express();
