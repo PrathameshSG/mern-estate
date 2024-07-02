@@ -7,6 +7,8 @@ import About from "./pages/About";
 import Listing from "./pages/Listing";
 import Search from "./pages/Search";
 import Header from "./components/Header";
+import PrivateRoute from "./components/PrivateRoute";
+import Profile from "./pages/Profile";
 const App = () => {
   return (
     <div>
@@ -20,14 +22,9 @@ const App = () => {
           <Route path="/search" element={<Search />} />
           <Route path="/listing/:listingId" element={<Listing />} />
 
-          {/* <Route element={<PrivateRoute />}>
+          <Route element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
-            <Route path="/create-listing" element={<CreateListing />} />
-            <Route
-              path="/update-listing/:listingId"
-              element={<UpdateListing />}
-            />
-          </Route> */}
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
